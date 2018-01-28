@@ -35,9 +35,9 @@ function viewCart() {
     default:
       for (var i = 0; i < cart.length; i++) {
         (i < cart.length - 1 ? res += `${Object.keys(cart[i])} at $${Object.values(cart[i])}, ` : res = res + ' and ' + `${Object.keys(cart[i])} at $${Object.values(cart[i])}.`);
+      }
+      console.log(res);
   }
-  console.log(res);
-}
 }
 
 function total() {
