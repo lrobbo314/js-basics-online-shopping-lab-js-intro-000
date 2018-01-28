@@ -20,24 +20,34 @@ function addToCart(item) {
 }
 
 function viewCart() {
-  // write your code here
-  var res = 'In your cart, you have ';
-  switch (cart.length) {
-    case 0:
-      console.log('Your shopping cart is empty.');
-      break;
+  const l = cart.length;
+
+  if (!l) {
+    return console.log("Your shopping cart is empty.");
+  }
+
+  let itemsAndPrices = [];
+
+  for (let i = 0; i < l; i++) {
+    let itemAndPrice = cart[i];
+    let item = Object.keys(itemAndPrice)[0];
+    let price = itemAndPrice[item];
+
+    itemsAndPrices.push(`${item} at \$${price}`);
+  }
+
+  switch(itemsAndPrices.length) {
     case 1:
-      console.log(`In your cart, you have ${Object.keys(cart[0])} at $${Object.values(cart[0])}.`);
       break;
     case 2:
-      console.log(`In your cart, you have ${Object.keys(cart[0])} at $${Object.values(cart[0])}, and ${Object.keys(cart[1])} at $${Object.values(cart[1])}.`);
+      itemsAndPrices = itemsAndPrices.join(" and ");
       break;
     default:
-      for (var i = 0; i < cart.length; i++) {
-        (i < cart.length - 1 ? res += `${Object.keys(cart[i])} at $${Object.values(cart[i])}, and ` : res += `${Object.keys(cart[i])} at $${Object.values(cart[i])}.`)
-      }
-      console.log(res);
+      itemsAndPrices[l-1] = "and ".concat(itemsAndPrices[l-1]);
+      itemsAndPrices = itemsAndPrices.join(", ");
   }
+
+  console.log(`In your cart, you have ${itemsAndPrices}.`);
 }
 
 function total() {
