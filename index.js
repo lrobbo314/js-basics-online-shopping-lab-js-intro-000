@@ -67,15 +67,15 @@ function removeFromCart(item) {
     if (cart[i].hasOwnProperty(item)) {
       itemInCart = true;
       cart = cart.slice(0, i).concat(cart.slice(i + 1));
-    l--;
+      l--;
+    }
   }
-}
 
-if (!itemInCart) {
-  console.log("That item in not in your cart.");
-}
+  if (!itemInCart) {
+    console.log("That item in not in your cart.");
+  }
 
-return cart;
+  return cart;
 }
 
 
