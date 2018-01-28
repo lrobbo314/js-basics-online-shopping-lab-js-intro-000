@@ -34,7 +34,7 @@ function viewCart() {
       break;
     default:
       for (var i = 0; i < cart.length; i++) {
-        (i < cart.length - 1 ? res += `${Object.keys(cart[i])} at $${Object.values(cart[i])}, ` : res = 'and'.concat(res,`${Object.keys(cart[i])} at $${Object.values(cart[i])}.`));
+        (i < cart.length - 1 ? res += `${Object.keys(cart[i])} at $${Object.values(cart[i])}, ` : res = 'and'.concat(res, `${Object.keys(cart[i])} at $${Object.values(cart[i])}.`));
       }
       console.log(res);
   }
@@ -78,4 +78,3 @@ function placeOrder(cardNumber) {
   console.log(`Your total cost is $${total()}, which will be charged to the card ${cardNumber}.`);
   cart = [];
 }
-
