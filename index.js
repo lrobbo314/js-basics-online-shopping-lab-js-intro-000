@@ -92,4 +92,3 @@ function placeOrder(cardNumber) {
   console.log(`Your total cost is ${bill}, which will be charged to the card ${cardNumber}`);
 
 }
-
