@@ -61,22 +61,21 @@ function total() {
 
 function removeFromCart(item) {
   // write your code here
-  var b = false;
-  var index = 0;
-  for (var i = 0; i < cart.length; i++) {
-    if (Object.keys(cart[i]) == item) {
-      index = i;
-      b = true;
+  let itemInCart = false;
+
+  for (let i = 0; l = cart.length; i < l; i++){
+    if (cart[i].hasOwnProperty(item)) {
+      itemInCart = true;
+      cart = cart.slice(0,i).concat(i+1));
+      l--;
     }
   }
 
-  if (b == true) {
-    cart.splice(index, 1)
-  } else if (cart.length == 0 || b == false) {
-    console.log('That item is not in your cart');
+  if (!itemInCart) {
+    console.log("That item in not in your cart.");
   }
 
-  // (b == true ? cart.splice(index, 1) : console.log('That item is not in your cart'));
+  return cart;
 }
 
 
