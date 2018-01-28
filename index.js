@@ -23,7 +23,7 @@ function viewCart() {
   const l = cart.length;
 
   if (!l) {
-    return console.log("Your shopping cart is empty.")
+    return console.log("Your shopping cart is empty.");
   }
 
   let itemsAndPrices = [];
@@ -40,14 +40,14 @@ function viewCart() {
     case 1:
       break;
     case 2:
-      itemsAndPrices = itemsAndPrices.join(" and");
-      break
-    case 3:
+      itemsAndPrices = itemsAndPrices.join(" and ");
+      break;
+    default:
       itemsAndPrices[l - 1] = "and ".concat(itemsAndPrices[l - 1]);
       itemsAndPrices = itemsAndPrices.join(", ");
   }
 
-  console.log(`In your cart you have ${itemsAndPrices}.`)
+  console.log(`In your cart, you have ${itemsAndPrices}.`);
 
 }
 
